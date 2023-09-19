@@ -1,7 +1,8 @@
 import Foundation
 
 
-struct Reminder{
+struct Reminder: Identifiable{
+    var id: String = UUID().uuidString
     var title: String
     var dueDate: Date
     var notes: String? = nil
