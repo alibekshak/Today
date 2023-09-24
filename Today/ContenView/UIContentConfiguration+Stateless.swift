@@ -1,6 +1,6 @@
 import UIKit
 
-extension UIContentContainer{
+extension UIContentConfiguration{
     func updated(for state: UIConfigurationState) -> Self {
         return self
     }

@@ -10,7 +10,7 @@ class ReminderViewController: UICollectionViewController{
     init(reminder: Reminder) {
         self.reminder = reminder
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-        listConfiguration.showsSeparators = true
+        listConfiguration.showsSeparators = false
         listConfiguration.headerMode = .firstItemInSection
         let listLayout = UICollectionViewCompositionalLayout.list(using: listConfiguration)
         super.init(collectionViewLayout: listLayout)
@@ -54,11 +54,12 @@ class ReminderViewController: UICollectionViewController{
             cell.contentConfiguration = headerConfiguration(for: cell, with: title)
         case(.view, _):
             cell.contentConfiguration = defaultConfiguration(for: cell, at: row)
-            
+        case (.title, .editableText(let title)):
+            cell.contentConfiguration = titleConfiguration(for: cell, with: title)
         default:
             fatalError("Unexpected combination of section and row.")
         }
-        cell.tintColor = .lightGray
+        cell.tintColor = .todayPrimaryTint
     }
     
 
@@ -66,13 +67,13 @@ class ReminderViewController: UICollectionViewController{
     private func updateSnapshotForEditing(){
         var snapshot = Snapshot()
         snapshot.appendSections([.title, .date, .notes])
-        snapshot.appendItems([.header(Section.title.name)], toSection: .title)
+        snapshot.appendItems([.header(Section.title.name), .editableText(reminder.title)], toSection: .title)
         snapshot.appendItems([.header(Section.date.name)], toSection: .date)
         snapshot.appendItems([.header(Section.notes.name)], toSection: .notes)
         dataSource.apply(snapshot)
     }
     
-    private func updateSnapshotForViewing(){
+    private func updateSnapshotForViewing() {
         var snapshot = Snapshot()
         snapshot.appendSections([.view])
         snapshot.appendItems(

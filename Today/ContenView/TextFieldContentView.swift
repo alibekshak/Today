@@ -1,27 +1,14 @@
 import UIKit
 
-
 class TextFieldContentView: UIView, UIContentView {
     struct Configuration: UIContentConfiguration {
+        
         var text: String? = ""
-
 
         func makeContentView() -> UIView & UIContentView {
             return TextFieldContentView(self)
         }
-        
-        func updated(for state: UIConfigurationState) -> Self {
-            var updatedConfig = self
-            
-            if state.traitCollection.containsTraits(in: UITraitCollection(userInterfaceStyle: .light)) {
-                updatedConfig.text = "Light Mode: \(text ?? "")"
-            } else if state.traitCollection.containsTraits(in: UITraitCollection(userInterfaceStyle: .dark)) {
-                updatedConfig.text = "Dark Mode: \(text ?? "")"
-            }
-            return updatedConfig
-        }
     }
-
 
     let textField = UITextField()
     var configuration: UIContentConfiguration {
@@ -30,11 +17,9 @@ class TextFieldContentView: UIView, UIContentView {
         }
     }
 
-
     override var intrinsicContentSize: CGSize {
         CGSize(width: 0, height: 44)
     }
-
 
     init(_ configuration: UIContentConfiguration) {
         self.configuration = configuration
@@ -43,18 +28,15 @@ class TextFieldContentView: UIView, UIContentView {
         textField.clearButtonMode = .whileEditing
     }
 
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 
     func configure(configuration: UIContentConfiguration) {
         guard let configuration = configuration as? Configuration else { return }
         textField.text = configuration.text
     }
 }
-
 
 extension UICollectionViewListCell {
     func textFieldConfiguration() -> TextFieldContentView.Configuration {

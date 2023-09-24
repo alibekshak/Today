@@ -1,14 +1,14 @@
 import Foundation
 
-extension ReminderViewController{
-    enum Section: Int, Hashable{
+extension ReminderViewController {
+    enum Section: Int, Hashable {
         case view
         case title
         case date
         case notes
-        
-        var name: String{
-            switch self{
+
+        var name: String {
+            switch self {
             case .view: return ""
             case .title:
                 return NSLocalizedString("Title", comment: "Title section name")
