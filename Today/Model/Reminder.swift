@@ -5,7 +5,7 @@ struct Reminder: Identifiable{
     var id: String = UUID().uuidString
     var title: String
     var dueDate: Date
-    var notes: String? = nil
+    var notes: String
     var isComplete: Bool = false
 }
 
