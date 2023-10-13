@@ -28,6 +28,7 @@
 		187C88EF2AB81022003BD1AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187C88ED2AB81022003BD1AB /* LaunchScreen.storyboard */; };
 		187C88F82AB81044003BD1AB /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C88F72AB81044003BD1AB /* Reminder.swift */; };
 		187C88FA2AB85842003BD1AB /* Date+Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C88F92AB85842003BD1AB /* Date+Today.swift */; };
+		189702972AD9418100F1C1E9 /* ReminderListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189702962AD9418100F1C1E9 /* ReminderListStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		187C88F02AB81022003BD1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		187C88F72AB81044003BD1AB /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		187C88F92AB85842003BD1AB /* Date+Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today.swift"; sourceTree = "<group>"; };
+		189702962AD9418100F1C1E9 /* ReminderListStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				187C88F72AB81044003BD1AB /* Reminder.swift */,
 				187C88F92AB85842003BD1AB /* Date+Today.swift */,
 				1822287C2AC0174C00B6DF90 /* UIColor+Today.swift */,
+				189702962AD9418100F1C1E9 /* ReminderListStyle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				187C88FA2AB85842003BD1AB /* Date+Today.swift in Sources */,
 				187C88E32AB81020003BD1AB /* AppDelegate.swift in Sources */,
 				182228492ABAFAC700B6DF90 /* ReminderViewController+Section.swift in Sources */,
+				189702972AD9418100F1C1E9 /* ReminderListStyle.swift in Sources */,
 				1822287B2ABF04B600B6DF90 /* UIContentConfiguration+Stateless.swift in Sources */,
 				182228742ABEFB2800B6DF90 /* ReminderViewController+Cell.swift in Sources */,
 				1822287D2AC0174C00B6DF90 /* UIColor+Today.swift in Sources */,
