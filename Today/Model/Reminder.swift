@@ -19,7 +19,7 @@ extension [Reminder] {
 }
 
 #if DEBUG
-extension Reminder{
+extension Reminder {
     static var sampleData = [
         Reminder(
             title: "Submit reimbursement report", dueDate: Date().addingTimeInterval(800.0),

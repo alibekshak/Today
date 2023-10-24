@@ -16,8 +16,7 @@ extension ReminderListViewController{
         let ids = idsThatChanged.filter { id in filteredReminders.contains(where: { $0.id == id }) }
         var snapshot = Snapshot()
         snapshot.appendSections([0])
-        snapshot.appendItems(filteredReminders.map { $0.id })
-        snapshot.appendItems(reminders.map {$0.id})
+        snapshot.appendItems(filteredReminders.map {$0.id})
         if !ids.isEmpty{
             snapshot.reloadItems(ids)
         }
@@ -25,7 +24,7 @@ extension ReminderListViewController{
     }
     
     func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: Reminder.ID) {
-        let reminder = reminders[indexPath.item]
+        let reminder = reminder(withId: id)
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.text = reminder.title
         contentConfiguration.secondaryText = reminder.dueDate.dayAndTimeText
